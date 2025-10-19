@@ -1,0 +1,4 @@
+repository "Fuga-de-labirinto/Fuga-de-labirinto@4673430003467@cloud"
+  path "/"
+    br "/main"
+    co "/main"
