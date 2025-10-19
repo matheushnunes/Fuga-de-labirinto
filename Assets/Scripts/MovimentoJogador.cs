@@ -6,6 +6,7 @@ public class MovimentoJogador : MonoBehaviour
     float direcaoMovimento; // <-- Vamos guardar -1 (esquerda), 1 (direita) ou 0 (parado)
     bool querPular = false;
     bool estaNoChao = false;
+    private bool estaViradoParaDireita = true;
     public GameObject prefabDoTiro; // <-- O molde do tiro
     public Transform pontoDeDisparo; // <-- Onde o tiro vai nascer
 
@@ -42,6 +43,19 @@ public class MovimentoJogador : MonoBehaviour
     }
     void FixedUpdate()
     {
+        // --- NOSSO NOVO CÓDIGO DE VIRAR ---
+        // Se estivermos indo para a direita (movimento > 0) E estivermos olhando para a esquerda...
+        if (direcaoMovimento > 0 && !estaViradoParaDireita)
+        {
+            Virar();
+        }
+        // Se estivermos indo para a esquerda (movimento < 0) E estivermos olhando para a direita...
+        else if (direcaoMovimento < 0 && estaViradoParaDireita)
+        {
+            Virar();
+        }
+        // --- FIM DO NOVO CÓDIGO ---
+
         // Aplicamos a força baseada na direção que o Update() capturou
         rb.AddForce(Vector2.right * direcaoMovimento * 10f);
 
@@ -82,5 +96,20 @@ public class MovimentoJogador : MonoBehaviour
             // ...destrói o item coletado.
             Destroy(outro.gameObject);
         }
+    }
+
+    void Virar()
+    {
+        // Inverte a flag
+        estaViradoParaDireita = !estaViradoParaDireita;
+
+        // Pega a escala atual do jogador
+        Vector3 escala = transform.localScale;
+
+        // Inverte o eixo X (multiplica por -1)
+        escala.x *= -1; 
+
+        // Aplica a nova escala
+        transform.localScale = escala;
     }
 }
