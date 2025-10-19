@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -839,7 +839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 818586993}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PontoDeDisparo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +978,7 @@ GameObject:
   - component: {fileID: 1501285023}
   - component: {fileID: 1501285026}
   - component: {fileID: 1501285027}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Jogador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
