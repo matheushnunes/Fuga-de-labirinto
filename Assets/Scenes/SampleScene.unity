@@ -420,12 +420,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: -0, z: -0.0060544345, w: 0.9999817}
+  m_LocalPosition: {x: 0.03, y: 0.041, z: -8.52}
+  m_LocalScale: {x: 0.17884, y: 0.21948051, z: 0.852238}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1501285025}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &560550033
 GameObject:
@@ -759,13 +759,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1501285021}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.0060544345, w: 0.9999817}
-  m_LocalPosition: {x: -3.9397, y: 2.2536, z: 0}
-  m_LocalScale: {x: 5.591742, y: 4.556061, z: 1.1733812}
+  m_LocalRotation: {x: 0.00037610834, y: 0.0000022771674, z: 0.006054434, w: 0.99998164}
+  m_LocalPosition: {x: -0.15, y: -0.1, z: -0}
+  m_LocalScale: {x: 5.5442123, y: 4.815301, z: 1.1733812}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.694}
+  m_LocalEulerAnglesHint: {x: 0.043, y: 0.001, z: 0.694}
 --- !u!61 &1501285026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -838,7 +839,7 @@ GameObject:
   - component: {fileID: 1841130157}
   m_Layer: 0
   m_Name: labirinto
-  m_TagString: Untagged
+  m_TagString: Chao
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1641,7 +1642,6 @@ TilemapCollider2D:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 560550035}
   - {fileID: 1501285025}
