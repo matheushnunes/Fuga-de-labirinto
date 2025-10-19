@@ -6,14 +6,15 @@ TagManager:
   tags:
   - Chao
   - Obstaculo
+  - ItemColetavel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Jogador
+  - 
   - Water
   - UI
-  - Tiro
+  - 
   - 
   - 
   - 
