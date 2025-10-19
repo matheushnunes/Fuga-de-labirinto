@@ -2,38 +2,52 @@ using UnityEngine;
 
 public class ComportamentoTiro : MonoBehaviour
 {
-    public float velocidade = 10f; // Velocidade do tiro
+    public float velocidade = 10f; 
     private Rigidbody2D rb;
 
+    // O Start() agora só pega o Rigidbody, mas não define a velocidade
     void Start()
     {
-        // Pega o Rigidbody2D do próprio tiro
         rb = GetComponent<Rigidbody2D>();
-
-        // Faz o tiro voar para a direita (transform.right)
-        // Usamos .velocity para dar uma velocidade constante
-        rb.linearVelocity = transform.right * velocidade; 
     }
 
-    // Este método roda quando o tiro ENCOSTA em algo
+    // --- ESTE É O NOSSO NOVO MÉTODO ---
+    // Ele será chamado pelo MovimentoJogador
+    public void DefinirDirecao(float direcao) // direcao será 1 (direita) ou -1 (esquerda)
+    {
+        // Se formos para a esquerda, vira o sprite do tiro
+        if (direcao < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        // (Não precisamos de um "else" porque o prefab já olha para a direita por padrão)
+
+        // Define a velocidade usando a direção recebida
+        // (Esperamos um frame para garantir que o Start() já rodou)
+        Invoke("AplicarVelocidade", 0.01f);
+    }
+
+    // Tivemos que criar este método separado por causa do Invoke
+    void AplicarVelocidade()
+    {
+        // Pega a direção da escala que acabamos de definir
+        float direcao = transform.localScale.x; 
+
+        rb.linearVelocity = new Vector2(velocidade * direcao, 0);
+    }
+
+    // O código de colisão permanece igual
     void OnCollisionEnter2D(Collision2D colisao)
     {
-        // Se a coisa que o tiro bateu tiver a tag "Obstaculo"...
         if (colisao.gameObject.CompareTag("Obstaculo"))
         {
-            // ...destrói o obstáculo
             Destroy(colisao.gameObject);
-
-            // E SÓ ENTÃO destrói o próprio tiro
             Destroy(gameObject);
         }
 
-        // Se o tiro bater no "Chao", ele também deve ser destruído
         if (colisao.gameObject.CompareTag("Chao"))
         {
             Destroy(gameObject);
         }
-
-        // Se bater em qualquer outra coisa (como o Jogador), ele ignora!
     }
 }
