@@ -6,6 +6,8 @@ public class MovimentoJogador : MonoBehaviour
     float direcaoMovimento; // <-- Vamos guardar -1 (esquerda), 1 (direita) ou 0 (parado)
     bool querPular = false;
     bool estaNoChao = false;
+    public GameObject prefabDoTiro; // <-- O molde do tiro
+    public Transform pontoDeDisparo; // <-- Onde o tiro vai nascer
 
     void Start()
     {
@@ -29,6 +31,13 @@ public class MovimentoJogador : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) && estaNoChao){
             querPular = true;
+        }
+
+        // Checa se o botão esquerdo do mouse foi pressionado
+        if (Input.GetMouseButtonDown(0)) // 0 = Botão Esquerdo
+        {
+            // Cria uma cópia do prefab, na posição e rotação do PontoDeDisparo
+            Instantiate(prefabDoTiro, pontoDeDisparo.position, pontoDeDisparo.rotation);
         }
     }
     void FixedUpdate()
