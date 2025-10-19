@@ -582,7 +582,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.115, y: -0.047, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4.27443, y: 3.2542353, z: 2.1374288}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1501285025}
@@ -672,8 +672,8 @@ Transform:
   m_GameObject: {fileID: 1001582724}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.19, y: 0.08, z: 0}
-  m_LocalScale: {x: 7.0785856, y: 3.403, z: 1}
+  m_LocalPosition: {x: 0.19, y: 0.02, z: 0}
+  m_LocalScale: {x: 15.43526, y: 9.811739, z: 1.1591}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -871,8 +871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b94b0199c619f746ae6697b5c639b6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovimentoJogador
-  prefabDoTiro: {fileID: 0}
-  pontoDeDisparo: {fileID: 0}
+  prefabDoTiro: {fileID: 651434003193538577, guid: 254388e3d0d582a42b6363d34491e11c, type: 3}
+  pontoDeDisparo: {fileID: 818586993}
 --- !u!1 &1841130153
 GameObject:
   m_ObjectHideFlags: 0
