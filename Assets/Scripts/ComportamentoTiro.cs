@@ -23,9 +23,17 @@ public class ComportamentoTiro : MonoBehaviour
         {
             // ...destrói o obstáculo
             Destroy(colisao.gameObject);
+
+            // E SÓ ENTÃO destrói o próprio tiro
+            Destroy(gameObject);
         }
 
-        // E então, destrói o próprio tiro (para ele não voar para sempre)
-        Destroy(gameObject);
+        // Se o tiro bater no "Chao", ele também deve ser destruído
+        if (colisao.gameObject.CompareTag("Chao"))
+        {
+            Destroy(gameObject);
+        }
+
+        // Se bater em qualquer outra coisa (como o Jogador), ele ignora!
     }
 }
