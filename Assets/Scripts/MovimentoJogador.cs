@@ -35,7 +35,23 @@ public class MovimentoJogador : MonoBehaviour
         }
 
         // Checa se o botão esquerdo do mouse foi pressionado
-        if (Input.GetMouseButtonDown(0)) // 0 = Botão Esquerdo
+        if (Input.GetMouseButtonDown(0)) 
+{
+    // 1. Cria uma cópia do prefab
+    GameObject tiroInstanciado = Instantiate(prefabDoTiro, pontoDeDisparo.position, pontoDeDisparo.rotation);
+
+    // 2. Pega o script que está no tiro que acabamos de criar
+    ComportamentoTiro scriptDoTiro = tiroInstanciado.GetComponent<ComportamentoTiro>();
+
+    // 3. Se o script existir, chama o novo método para definir a direção
+    if (scriptDoTiro != null)
+    {
+        // Se estaViradoParaDireita for true, passa 1, senão, passa -1
+        float direcaoDoTiro = estaViradoParaDireita ? 1f : -1f;
+
+        scriptDoTiro.DefinirdDirecao(direcaoDoTiro);
+    }
+}
         {
             // Cria uma cópia do prefab, na posição e rotação do PontoDeDisparo
             Instantiate(prefabDoTiro, pontoDeDisparo.position, pontoDeDisparo.rotation);
