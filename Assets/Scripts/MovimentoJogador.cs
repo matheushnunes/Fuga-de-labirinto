@@ -16,11 +16,11 @@ public class MovimentoJogador : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             direcaoMovimento = 1f; // <-- Queremos ir para a direita
         }
-        else if (Input.GetKey(KeyCode.LeftArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             direcaoMovimento = -1f; // <-- Queremos ir para a esquerda
         }
@@ -29,7 +29,7 @@ public class MovimentoJogador : MonoBehaviour
             direcaoMovimento = 0f; // <-- Não estamos pressionando nada, ficar parado
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) && estaNoChao){
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W) && estaNoChao){
             querPular = true;
         }
 
@@ -70,6 +70,17 @@ public class MovimentoJogador : MonoBehaviour
         if (colisao.gameObject.CompareTag("Chao"))
         {
             estaNoChao = false; // Não estamos mais no chão!
+        }
+    }
+
+    // Este método roda quando o jogador "atravessa" um colisor "Is Trigger"
+    void OnTriggerEnter2D(Collider2D outro)
+    {
+        // Se a coisa que atravessamos tiver a tag "ItemColetavel"...
+        if (outro.gameObject.CompareTag("ItemColetavel"))
+        {
+            // ...destrói o item coletado.
+            Destroy(outro.gameObject);
         }
     }
 }
