@@ -30,9 +30,9 @@ public class MovimentoJogador : MonoBehaviour
             direcaoMovimento = 0f; // <-- Não estamos pressionando nada, ficar parado
         }
 
-      if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && estaNoChao == true) {
-     querPular = true;
-}
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && estaNoChao == true) {
+            querPular = true;
+        }
 
         // Checa se o botão esquerdo do mouse foi pressionado
         if (Input.GetMouseButtonDown(0)) 

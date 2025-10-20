@@ -2665,6 +2665,7 @@ MonoBehaviour:
   plataformaParaAtivar: {fileID: 0}
   alturaDeSubida: 5
   velocidade: 2
+  tempoDeEspera: 3
 --- !u!61 &196087255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9482,8 +9483,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScriptDoGatilho
   plataformaParaAtivar: {fileID: 704125960}
-  alturaDeSubida: 5
+  alturaDeSubida: 7
   velocidade: 2
+  tempoDeEspera: 3
 --- !u!61 &1755427225
 BoxCollider2D:
   m_ObjectHideFlags: 0
