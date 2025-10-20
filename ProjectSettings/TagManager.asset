@@ -47,11 +47,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Jogador
-    uniqueID: 1196266239
-    locked: 0
   - name: Chave
     uniqueID: 1143599893
+    locked: 0
+  - name: Jogador
+    uniqueID: 1196266239
     locked: 0
   - name: Caixa
     uniqueID: 3470213363
