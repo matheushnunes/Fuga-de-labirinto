@@ -74,7 +74,7 @@ public class MovimentoJogador : MonoBehaviour
         if (querPular == true)
         {
             // Aplicamos o pulo como um "Impulso" (um chute instantâneo)
-            rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse); 
+            rb.AddForce(Vector2.up * 6f, ForceMode2D.Impulse); 
             querPular = false; // <-- Abaixa a bandeira para não pular de novo
         }
     }
